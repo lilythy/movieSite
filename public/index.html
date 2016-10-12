@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8"/>
+    <base href='/'/>
+    <title ng-bind="title"></title>
+
+    <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css'/>
+    <link rel='stylesheet' href='bower_components/font-awesome/css/font-awesome.css'/>
+    <link rel='stylesheet' type="text/css" href='css/style.css'/>
+    <link rel='stylesheet' type="text/css" href='css/index.css'/>
+</head>
+<body>
+<div class="navbar grayNav">
+    <ul class="nav-left">
+        <li><a href="#">豆瓣</a></li>
+        <li><a href="#">读书</a></li>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">音乐</a></li>
+        <li><a href="#">同城</a></li>
+        <li><a href="#">小组</a></li>
+        <li><a href="#">阅读</a></li>
+        <li><a href="#">FM</a></li>
+        <li><a href="#">东西</a></li>
+        <li><a href="#">市集</a></li>
+        <li><a href="#">更多</a></li>
+    </ul>
+    <ul class="nav-right">
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="/addmovie">电影录入</a></li>
+    </ul>
+</div>
+<div class="searchbar">
+    <div class="nav-wrap">
+        <div class="nav-primary">
+            <div class="nav-logo">
+                <a href="/">豆瓣电影</a>
+            </div>
+            <div class="nav-search">
+                <form action="">
+                    <fieldset>
+                        <legend>搜索</legend>
+                        <label for="inp-query" style="display:none;">电影、影人、影院、电视剧</label>
+                        <div class="inp">
+                            <input id="inp-query" name="search-text" size="22" maxlength="60" placeholder="电影、影人、影院、电视剧" autocomplete="auto">
+                        </div>
+                        <div class="inp-btn">
+                            <input type="submit" value="搜索">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="nav-secondary">
+        <div class="secondary-items">
+            <ul>
+                <li><a href="#">影讯&购票</a></li>
+                <li><a href="#">选电影</a></li>
+                <li><a href="#">电视剧</a></li>
+                <li><a href="#">排行榜</a></li>
+                <li><a href="#">分类</a></li>
+                <li><a href="#">影评</a></li>
+                <li><a href="#">2015年度榜单</a></li>
+                <li><a href="#">豆瓣观影报告</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div ui-view></div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src='bower_components/ng-file-upload-shim/ng-file-upload-shim.js'></script>
+<script src='bower_components/ng-file-upload/ng-file-upload.js'></script>
+
+<script src="js/module.js"></script>
+<script src="js/routes.js"></script>
+
+<script src="js/controller/mainController.js"></script>
+<script src="js/controller/movieController.js"></script>
+<script src="js/controller/addController.js"></script>
+
+<script src="js/service/movieService.js"></script>
+<script src="js/service/sessionStorage.js"></script>
+
+</body>
+</html>

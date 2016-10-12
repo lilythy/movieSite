@@ -1,0 +1,55 @@
+<form class="container formwidth" role="form" name="form" id="movieForm">
+    <div class="form-group">
+        <div class="imgPreview"><img ng-show="isShow" ng-src='{{dir}}{{serverPicName}}' alt="{{f.name}}"/></div>
+        <button class="upload-btn" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+                accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
+            Select File</button>
+        <input id="serverPicName" value="{{serverPicName}}" type="hidden"/>
+
+        <span id="fileName">{{f.name}} {{errFile.name}} {{errFile.$error}}</span>
+        <span class="progress" ng-show="f.progress >= 0 && f.progress < 100">
+          <div class="progress-bar" style="width:{{f.progress}}%"
+               ng-bind="f.progress + '%'"></div>
+        </span>
+
+    </div>
+    <div class="form-group movieNameBar">
+        <label for="moviename">电影名称</label>
+        <input type="text" class="form-control" id="moviename"
+               placeholder="请输入电影名称" ng-model="movie.moviename">
+    </div>
+    <div class="form-group">
+        <label for="director">导演</label>
+        <input type="text" id="director" class="form-control" ng-model="movie.director">
+    </div>
+    <div class="form-group">
+        <label for="writers">编剧</label>
+        <input type="text" id="writers" class="form-control" ng-model="movie.writers">
+    </div>
+    <div class="form-group">
+        <label for="actors">主演</label>
+        <input type="text" id="actors" class="form-control" ng-model="movie.actors">
+    </div>
+    <div class="form-group">
+        <label for="type">类型</label>
+        <input type="text" id="type" class="form-control" ng-model="movie.type">
+    </div>
+    <div class="form-group">
+        <label for="countries">制片国家</label>
+        <input type="text" id="countries" class="form-control" ng-model="movie.countries">
+    </div>
+    <div class="form-group">
+        <label for="language">语言</label>
+        <input type="text" id="language" class="form-control" ng-model="movie.language">
+    </div>
+    <div class="form-group">
+        <label for="showDate">上映日期</label>
+        <input type="text" id="showDate" class="form-control" ng-model="movie.showDate">
+    </div>
+    <div class="form-group">
+        <label for="runtime">片长</label>
+        <input type="text" id="runtime" class="form-control" ng-model="movie.runtime">
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="postMovie()">提交</button>
+</form>

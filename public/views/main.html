@@ -1,0 +1,58 @@
+<div class="wrapper">
+    <div class="content">
+        <div class="grid-16-8">
+            <div class="article">
+                <div class="screening">
+                    <div class="screening-head">
+                        <h2>
+                            正在热映
+                            <span><a href="#">全部正在热映»</a></span>
+                            <span><a href="#">即将上映»</a></span>
+                        </h2>
+                    </div>
+                    <div class="screening-body">
+                        <ul class='ui-slide-content'>
+                            <li class='ui-slide-item' ng-repeat="movie in movies">
+                                <ul>
+                                    <li class='poster'><a href="#"><img src='{{dir}}{{movie.moviepic}}' alt="{{movie.moviename}}"></a></li>
+                                    <li class='title'><a href="#">{{movie.moviename}}</a></li>
+                                    <li class='rating'>
+                                        <span class='rating-star allstar allstar{{movie.starclass}}'></span>
+                                        <span class='subject-rate'>{{movie.starnum}}</span>
+                                    </li>
+                                    <li class='ticket_btn'>
+                                        <span>
+                                            <a href="#">选座购票</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="aside"></div>
+        </div>
+    </div>
+</div>
+<!--
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Director</th>
+        <th>Genre</th>
+        &lt;!&ndash;<th>Option</th>&ndash;&gt;
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="movie in movies">
+        <td>{{movie.title}}</td>
+        <td>{{movie.releaseYear}}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.genre}}</td>
+       &lt;!&ndash; <td><a class="btn btn-default" href="javascript:void(0)" ng-click="updateMovie(movie)">Update</a></td>&ndash;&gt;
+    </tr>
+    </tbody>
+</table>-->

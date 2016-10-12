@@ -1,0 +1,16 @@
+body {
+    font: 12px Helvetica,Arial,sans-serif;
+}
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+form {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+}
+
