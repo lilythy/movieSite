@@ -58,8 +58,6 @@
 			promise.then(function (data) {
 				window.location.reload();
 			});
-
 		}
-
 	}]);
 })(angular.module('app'));

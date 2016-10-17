@@ -34,7 +34,7 @@ var MovieSchema = new Schema({
 	},
 	moviepic:String,       //电影图片的名称
 	runtime:String,        //时长
-	starnum:Number,        //电影评分，最高为10分
+	starnum:Number,        //电影评分
 	starclass:Number       //电影评价的星级数，最好为五颗星
 });
 
@@ -44,11 +44,13 @@ MovieSchema.pre('save',function(next){
 	var movie = this;
 
 	if(this.isNew){
+		//this.meta.showDate = this.showDate;
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	}else{
 		this.meta.updateAt = Date.now();
 	}
-
+	var a = this;
+	console.log(this);
 	next();
 });
 

@@ -21,7 +21,7 @@ exports.list = function(req, res){
 		if (err) {
 			return res.send(err);
 		}
-		//以json格式返回前端电影数据
+		//以json格式返回电影数据给前端
 		res.json(movie);
 	})
 };
@@ -52,15 +52,20 @@ exports.uploadPic = function(req,res){
 
 // 新增一条电影数据方法
 exports.create = function(req, res){
-	  //以解析出来的req.body对象实例化一个MovieModel对象：newMovie
-		var newMovie = new MovieModel(req.body);
-		//newMovie调用mongoose的save方法将数据存入mongodb数据库
-		newMovie.save(function (err, movie) {
-			if (err) {
-				console.log(err);
-			}
-			//res.send({message: 'add a movie'})
-		});
+	//将req.body赋值给一个新对象mymovie
+	var mymovie = req.body;
+	//将req.body提交过来的showDate放入movieSchema里定义的meta属性里
+	mymovie.meta = {};
+	mymovie.meta.showDate = mymovie.showDate;
+  //以解析出来的req.body对象实例化一个MovieModel对象：newMovie
+	var newMovie = new MovieModel(mymovie);
+	//newMovie调用mongoose的save方法将数据存入mongodb数据库
+	newMovie.save(function (err, movie) {
+		if (err) {
+			console.log(err);
+		}
+		//res.send({message: 'add a movie'})
+	});
 };
 
 // update a movie

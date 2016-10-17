@@ -34,15 +34,7 @@
 					}
 				}
 			})
-			/**/
-			.state('movie.update', {
-				url: '/update',
-				controller: 'MovieController',
-				templateUrl: '/views/update.html',
-				params: {
-					data: null
-				}
-			})
+
 			/* 设置路由状态'add',路由为'/addmovie'，对应的html页面为views文件夹下的'addmovie.html'，作用于该页面的控制器名称为'AddController' */
 			.state('add', {
 				url: '/addmovie',
