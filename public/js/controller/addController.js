@@ -22,7 +22,7 @@
 			if (file) {
 				//调用Upload的upload()方法将data数据（即文件）上传至后台url处理
 				file.upload = Upload.upload({
-						url: 'http://localhost:3000/api/upload',
+						url: 'http://localhost:3000/movie/pic',
 						data: {file: file}
 				});
 				//then方法里面有文件上传成功后要执行的语句，这里表示上传成功后则显示预览的img标签并将返回的数据赋给serverPicName

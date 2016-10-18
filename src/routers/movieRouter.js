@@ -9,11 +9,12 @@ var router = express.Router();
 var movies = require('../controllers/movies.js');
 /* 设置get方法路由映射. */
 router.get('/all',movies.list);
-router.get('/:id',movies.update);
+//router.get('/:id',movies.update);
 
 /* 设置post方法路由映射. */
-router.post('/add',movies.create);
-router.post('/upload',movies.uploadPic);
+router.post('/',movies.create);
+router.post('/pic',movies.uploadPic);
+
 
 //导出为router模块
 module.exports = router;

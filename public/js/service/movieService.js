@@ -9,7 +9,7 @@
 			//通过请求后台接口获取所有电影数据
 			getAllMovies: function () {
 				//后台接口链接
-				var url = "http://localhost:3000/api/all";
+				var url = "http://localhost:3000/movie/all";
 				//通过$q服务注册一个延迟对象 deferred，以达到异步的作用
 				var deferred = $q.defer();
 				//监听请求结果
@@ -31,7 +31,7 @@
 			//将表单数据提交至后台处理
 			addMovie:function(movieEntity){
 				//后台处理链接
-				var url = "http://localhost:3000/api/add";
+				var url = "http://localhost:3000/movie/";
 				/*利用$q 服务实现 Deferred / Promise 方法，利用$q.defer()生成deffered 对象，该对象有三个方法：
 				* 1.resolve(value)：如果异步操作成功，resolve方法将Promise对象的状态变为“成功”。
 				* 2.reject(reason)：如果异步操作失败，则用reject方法将Promise对象的状态变为“失败”。
@@ -51,20 +51,6 @@
 					}
 				)
 				//通过deferred.promise获得返回给deferred对象的结果
-				return deferred.promise;
-			},
-			updateMovie: function (movie, id) {
-				var url = "http://localhost:3000/api/" + id;
-				var deferred = $q.defer();
-				$http.put(url, movie).then(
-					function success(respData) {
-						var movies = respData.data;
-						deferred.resolve(movies);
-					},
-					function error(reason) {
-						deferred.reject(reason);
-					}
-				);
 				return deferred.promise;
 			}
 		}
